@@ -10,9 +10,42 @@
 
 社区总目录（awesome-dsh-plugin）是第四件事：它只把插件**列出来**，安装仍走上面三条。
 
+## 本机实测（2026-11-15，Qika-GH 的 Windows 机器）
+
+这台机器到 GitHub 的 **HTTPS 是不通的**：`github.com:443` 在 TLS 握手阶段被重置，
+curl 拿 `000`；`api.github.com` 直接连不上；全局还配了一条
+`url.https://ghfast.top/https://github.com/.insteadOf https://github.com/`，
+会把所有 https 流量绕到镜像（该镜像对本仓库返回 403）。
+
+**SSH 通**（`github.com:22` 正常），所以推送走 SSH，remote 用 scp 形式（不会被上面那条重写命中）：
+
+```bash
+git remote add origin git@github.com:Qika-GH/dsh-session-switches.git
+git config core.sshCommand '"C:/Program Files/Git/usr/bin/ssh.exe" -o StrictHostKeyChecking=accept-new'
+GIT_SSH_COMMAND='"C:/Program Files/Git/usr/bin/ssh.exe"' git push -u origin main
+```
+
+凭据助手（Git Credential Manager）在 `C:/Program Files/Git/ucrt64/bin/git-credential-manager.exe`
+（注意是 `ucrt64` 不是 `mingw64`）。git 不接受把路径直接塞进 `credential.helper`（会被当成命令名，
+报 `git: 'credential-C:/Program Files/...' is not a git command`），必须用 shell 形式：
+
+```bash
+git config --global credential.helper '!"C:/Program Files/Git/ucrt64/bin/git-credential-manager.exe"'
+```
+
+公开性验证一条命令即可（本机实测三项全绿）：
+
+```bash
+scripts/check-visibility.sh Qika-GH dsh-session-switches main
+# github.com/...      -> HTTP 200 (public)
+# anonymous git ls-remote -> ok
+# jsDelivr @main/market/index.json -> HTTP 200
+```
+
 ## 0. 替换占位符
 
-所有需要你账号的地方都写成了 `Qika-GH`。一条命令替换（macOS/Linux/Git Bash）：
+所有者已经写死为 `Qika-GH`。若以后要换账号，一条命令替换：
+
 
 ```bash
 grep -rl Qika-GH . --exclude-dir=node_modules --exclude-dir=.git \
