@@ -5,6 +5,15 @@
 
 ![侧边栏里的插件开关](docs/sidebar.png)
 
+## English
+
+Turn installed DSH plugins on and off **per conversation**, from the sidebar.
+
+- One switch button at the bottom of the sidebar; the badge counts the plugins muted in the current conversation.
+- Two tabs: **This chat** (the plugins you pinned) and **All plugins** (pin any installed plugin so it shows up in the sidebar list).
+- Muting a plugin makes its tools unavailable in that conversation only — every other conversation keeps them. Nothing is unloaded, so the UI stays intact.
+- State lives in `$DSH_HOME/session-plugin-switches.json`. Tool↔plugin attribution is inferred by scanning plugin sources (`defineTool()` / `tools.register()`) and intersecting with the tools actually mounted at runtime.
+
 ## 它解决什么问题
 
 DSH 的插件是按 profile 全局加载的。想让某个对话别用 Web、别用子代理、别用 CAD，

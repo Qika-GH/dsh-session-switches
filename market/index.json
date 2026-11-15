@@ -1,0 +1,41 @@
+{
+  "format": 1,
+  "title": {
+    "en": "Session Switches",
+    "zh": "会话插件开关"
+  },
+  "description": {
+    "en": "Plugins that let you switch other plugins on and off per conversation.",
+    "zh": "按对话逐一切换其他插件开关的插件。"
+  },
+  "plugins": [
+    {
+      "name": "dsh-session-switches",
+      "title": {
+        "en": "Session Switches",
+        "zh": "会话插件开关"
+      },
+      "description": {
+        "en": "Per-conversation plugin switches in the DSH sidebar: pin installed plugins and turn them on or off for the conversation you are in.",
+        "zh": "在侧边栏底部按对话开关插件：把已安装的插件钉到「本对话」，逐个开关，互不影响其他对话。"
+      },
+      "icon": "icon.svg",
+      "author": "YOUR_GITHUB_USER",
+      "homepage": "https://github.com/YOUR_GITHUB_USER/dsh-session-switches#readme",
+      "repository": {
+        "url": "https://github.com/YOUR_GITHUB_USER/dsh-session-switches"
+      },
+      "versions": [
+        {
+          "version": "0.1.0",
+          "publishTimestamp": 1794701831,
+          "source": {
+            "type": "git",
+            "url": "https://github.com/YOUR_GITHUB_USER/dsh-session-switches",
+            "commit": "f6b91337acbbf1a543f73de24a7633bfe4176c88"
+          }
+        }
+      ]
+    }
+  ]
+}
