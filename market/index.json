@@ -33,7 +33,8 @@
             "type": "git",
             "url": "https://github.com/Qika-GH/dsh-session-switches",
             "commit": "f6b91337acbbf1a543f73de24a7633bfe4176c88"
-          }
+          },
+          "commit": "06535e4595fccedd40a25df5f6f035bb0d97e28c"
         }
       ]
     }
