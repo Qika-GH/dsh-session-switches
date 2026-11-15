@@ -24,7 +24,7 @@ const path = 'market/index.json'
 const index = JSON.parse(fs.readFileSync(path, 'utf8'))
 for (const plugin of index.plugins ?? []) {
   for (const version of plugin.versions ?? []) {
-    if (version.source?.type === 'git') version.commit = sha
+    if (version.source?.type === 'git') version.source.commit = sha
   }
 }
 fs.writeFileSync(path, JSON.stringify(index, null, 2) + '\n')
