@@ -1,7 +1,7 @@
-url: https://github.com/YOUR_GITHUB_USER/dsh-session-switches
-name: YOUR_GITHUB_USER/dsh-session-switches
+url: https://github.com/Qika-GH/dsh-session-switches
+name: Qika-GH/dsh-session-switches
 category: session
 description:
   en: 'Per-conversation plugin switches in the DSH sidebar: pin the plugins you care about and turn each one on or off for the conversation you are in, without restarting or editing the profile. Turning a plugin off really removes its tools from that agent, so the model gets a clear refusal instead of a silent failure.'
   zh: '在侧边栏底部按对话开关插件：把常用的插件钉到「本对话」，逐个开关，互不影响其他对话，不用改配置也不用重启。关掉后该插件注册的工具在这个对话里真的调不到，模型会收到一句明确说明。'
-icon: https://raw.githubusercontent.com/YOUR_GITHUB_USER/dsh-session-switches/main/market/icon.svg
+icon: https://raw.githubusercontent.com/Qika-GH/dsh-session-switches/main/market/icon.svg

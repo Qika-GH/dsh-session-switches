@@ -4,7 +4,7 @@
 
 | 路径 | 别人怎么装 | 需要什么 |
 |---|---|---|
-| Git 直装 | `dsh plugin --profile <p> add "git+https://github.com/YOUR_GITHUB_USER/dsh-session-switches.git#<commit>"` | 一个公开仓库 |
+| Git 直装 | `dsh plugin --profile <p> add "git+https://github.com/Qika-GH/dsh-session-switches.git#<commit>"` | 一个公开仓库 |
 | npm | `dsh plugin --profile <p> add dsh-session-switches@0.1.0` | npm 账号（registry 必须是 npmjs.com） |
 | 插件市场（Discover） | 市场 → 源 → 添加索引地址 → 搜索 → 安装 | 一个公开可访问的 format 1 索引 JSON |
 
@@ -12,11 +12,11 @@
 
 ## 0. 替换占位符
 
-所有需要你账号的地方都写成了 `YOUR_GITHUB_USER`。一条命令替换（macOS/Linux/Git Bash）：
+所有需要你账号的地方都写成了 `Qika-GH`。一条命令替换（macOS/Linux/Git Bash）：
 
 ```bash
-grep -rl YOUR_GITHUB_USER . --exclude-dir=node_modules --exclude-dir=.git \
-  | xargs sed -i 's/YOUR_GITHUB_USER/<你的用户名>/g'
+grep -rl Qika-GH . --exclude-dir=node_modules --exclude-dir=.git \
+  | xargs sed -i 's/Qika-GH/<你的用户名>/g'
 ```
 
 ## 1. 推到 GitHub
@@ -26,7 +26,7 @@ cd dsh-session-switches
 git init -b main
 git add -A
 git commit -m "feat: per-conversation plugin switches for the DSH sidebar"
-git remote add origin https://github.com/YOUR_GITHUB_USER/dsh-session-switches.git
+git remote add origin https://github.com/Qika-GH/dsh-session-switches.git
 git push -u origin main
 ```
 
@@ -54,8 +54,8 @@ npm view dsh-session-switches version dist.tarball
 
 索引和图标一起放任意静态托管即可：
 
-- GitHub Pages：`https://YOUR_GITHUB_USER.github.io/dsh-session-switches/index.json`
-- jsDelivr 直读仓库：`https://cdn.jsdelivr.net/gh/YOUR_GITHUB_USER/dsh-session-switches@main/market/index.json`
+- GitHub Pages：`https://Qika-GH.github.io/dsh-session-switches/index.json`
+- jsDelivr 直读仓库：`https://cdn.jsdelivr.net/gh/Qika-GH/dsh-session-switches@main/market/index.json`
 
 别人那边：**插件 → 实验性插件 → 打开「自定义插件索引」→ 发现 → 添加索引源**，粘贴地址即可搜索、一键安装。
 
@@ -69,10 +69,10 @@ npm view dsh-session-switches version dist.tarball
 
 ```bash
 git clone https://github.com/<你>/awesome-dsh-plugin.git && cd awesome-dsh-plugin
-cp <本包>/market/community-entry.yml data/plugins/YOUR_GITHUB_USER__dsh-session-switches.yml
+cp <本包>/market/community-entry.yml data/plugins/Qika-GH__dsh-session-switches.yml
 git checkout -b add-session-switches
-git add data/plugins/YOUR_GITHUB_USER__dsh-session-switches.yml
-git commit -m "Add YOUR_GITHUB_USER/dsh-session-switches"
+git add data/plugins/Qika-GH__dsh-session-switches.yml
+git commit -m "Add Qika-GH/dsh-session-switches"
 git push -u origin add-session-switches
 ```
 

@@ -45,14 +45,14 @@
     "sidebar",
     "plugin-switch"
   ],
-  "author": "YOUR_GITHUB_USER",
+  "author": "Qika-GH",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/YOUR_GITHUB_USER/dsh-session-switches.git"
+    "url": "git+https://github.com/Qika-GH/dsh-session-switches.git"
   },
-  "homepage": "https://github.com/YOUR_GITHUB_USER/dsh-session-switches#readme",
+  "homepage": "https://github.com/Qika-GH/dsh-session-switches#readme",
   "bugs": {
-    "url": "https://github.com/YOUR_GITHUB_USER/dsh-session-switches/issues"
+    "url": "https://github.com/Qika-GH/dsh-session-switches/issues"
   },
   "license": "MIT"
 }
