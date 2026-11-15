@@ -1,0 +1,4 @@
+# Sidebar switchboard for per-conversation plugin toggles.
+- insert:
+    - id: session-switches
+      name: 'dsh-session-switches'

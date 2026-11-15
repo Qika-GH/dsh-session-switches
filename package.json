@@ -1,0 +1,58 @@
+{
+  "name": "dsh-session-switches",
+  "version": "0.1.0",
+  "description": "Per-conversation plugin switches in the DSH sidebar: pin installed plugins and turn them on or off for each conversation.",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./client": "./lib/client/index.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src",
+    "lib",
+    "scripts",
+    "locale",
+    "docs",
+    "market",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-renderer"
+      ],
+      "platform": "web"
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "*"
+  },
+  "scripts": {
+    "build": "node scripts/build-client.mjs",
+    "test": "node test/selftest.mjs"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "sidebar",
+    "plugin-switch"
+  ],
+  "author": "YOUR_GITHUB_USER",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YOUR_GITHUB_USER/dsh-session-switches.git"
+  },
+  "homepage": "https://github.com/YOUR_GITHUB_USER/dsh-session-switches#readme",
+  "bugs": {
+    "url": "https://github.com/YOUR_GITHUB_USER/dsh-session-switches/issues"
+  },
+  "license": "MIT"
+}
